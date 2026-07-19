@@ -1,195 +1,469 @@
-<div align="center">
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{margin=1in}
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:1A5276,100:00d4ff&height=220&section=header&text=DHS%20Data%20Analysis%20with%20STATA&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=A%20Practical,%20Step-by-Step%20Course%20on%20DHS%20Survey%20Data%20Analysis&descAlignY=55&descSize=18)
+% ==================== PACKAGES ====================
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes, arrows, calc}
+\usepackage{listings}
+\usepackage{amsmath, amssymb}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{fontawesome5}
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=00D4FF&center=true&vCenter=true&width=700&lines=Import+%C2%B7+Clean+%C2%B7+Explore+%C2%B7+Recode;Survey+Weights+%C2%B7+svyset+%C2%B7+Weighted+Statistics;Logistic+Regression+%C2%B7+Publication-Ready+Tables)](https://git.io/typing-svg)
+% ==================== COLOR DEFINITIONS ====================
+\definecolor{primary}{RGB}{31,78,121}
+\definecolor{secondary}{RGB}{16,124,16}
+\definecolor{accent}{RGB}{0,150,200}
+\definecolor{stata}{RGB}{26,83,142}
+\definecolor{darkbg}{RGB}{13,17,23}
+\definecolor{lightbg}{RGB}{240,245,250}
+\definecolor{border}{RGB}{200,210,220}
+\definecolor{green}{RGB}{16,185,129}
+\definecolor{purple}{RGB}{124,58,237}
+\definecolor{cyan}{RGB}{0,212,255}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codecomment}{RGB}{0,128,0}
 
-</div>
-
-<div align="center">
-
-[![License](https://img.shields.io/badge/License-MIT-10b981?style=for-the-badge&labelColor=0d1117&logo=opensourceinitiative&logoColor=10b981)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active%20Course-7c3aed?style=for-the-badge&labelColor=0d1117)](#course-roadmap)
-[![Level](https://img.shields.io/badge/Level-Beginner%20to%20Advanced-00d4ff?style=for-the-badge&labelColor=0d1117)](#what-youll-learn)
-
-</div>
-
-<div align="center">
-
-![Stata](https://img.shields.io/badge/Stata-1A5276?style=flat-square&logoColor=white)
-![BDHS](https://img.shields.io/badge/BDHS_2022-Data-00d4ff?style=flat-square&logoColor=white)
-![YouTube](https://img.shields.io/badge/YouTube-Salek%20Data%20Lab-FF0000?style=flat-square&logo=youtube&logoColor=white)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0005--5973--461X-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-5973-461X)
-[![GitHub stars](https://img.shields.io/github/stars/muhammadsalek/DHS-Data-Analysis-with-STATA?style=flat-square&color=f59e0b)](https://github.com/muhammadsalek/DHS-Data-Analysis-with-STATA/stargazers)
-
-</div>
-
----
-
-## Overview
-
-A practical, step-by-step course for analyzing **Demographic and Health Survey (DHS)** datasets using **Stata** — from raw `.dta` import through survey-weighted logistic regression and publication-ready tables. Built episode-by-episode for the **Salek Data Lab** YouTube series, aimed at early-career researchers working with DHS-type complex survey data.
-
-**Course Pipeline:**
-
-```
-Raw DHS Dataset (.dta)
-        │
-        ▼
-  Import & Explore        cd · use · describe · codebook · summarize
-        │
-        ▼
-  Variable Recoding       generate · egen · recode · label
-        │
-        ▼
-  Missing Data            misstable · complete-case handling
-        │
-        ▼
-  Survey Design            svyset · weights · PSU · strata
-        │
-        ▼
-  Weighted Statistics      svy: tab · weighted crosstabs
-        │
-        ▼
-  Regression Modeling      logistic · svy: logistic
-        │
-        ▼
-  Publication Output       AOR tables · model diagnostics · manuscript reporting
-```
-
----
-
-## What You'll Learn
-
-- [x] Import DHS datasets into Stata
-- [x] Understand DHS file structure and variable naming conventions
-- [x] Variable recoding (`generate`, `egen`, `recode`)
-- [x] Missing data handling
-- [x] Survey weights and normalization
-- [x] `svyset` — declaring the complex survey design
-- [x] Weighted descriptive statistics
-- [x] Weighted cross-tabulation
-- [x] Logistic regression
-- [x] Survey logistic regression (`svy: logistic`)
-- [x] Model diagnostics
-- [x] Publication-ready tables
-- [x] Manuscript reporting standards
-
----
-
-## Course Roadmap
-
-| Day | Topic | Status |
-|:---:|:------|:------:|
-| **01** | Import, Clean \& Explore DHS Data | ✅ Available |
-| 02 | Variable Recoding \& Labeling | 🔜 Coming Soon |
-| 03 | Missing Data \& Survey Design (`svyset`) | 🔜 Coming Soon |
-| 04 | Weighted Descriptives \& Cross-tabulation | 🔜 Coming Soon |
-| 05 | Logistic Regression \& Model Building | 🔜 Coming Soon |
-| 06 | Survey Logistic Regression \& Diagnostics | 🔜 Coming Soon |
-| 07 | Publication-Ready Tables \& Manuscript Reporting | 🔜 Coming Soon |
-
-> Slide decks and companion `.do` files are released alongside each YouTube episode.
-
----
-
-## Repository Structure
-
-```
-DHS-Data-Analysis-with-STATA/
-│
-├── README.md
-├── LICENSE
-├── STATA_Day_01.pdf            ← Day 01 lecture slides (Import, Clean & Explore)
-│
-├── slides/                     ← Beamer/PDF lecture slides, by day
-├── stata-code/                 ← Companion .do files, by day
-├── docs/                       ← Supplementary notes and references
-└── sample-output/              ← Example tables and figures
-```
-
----
-
-## Data Source
-
-| Dataset | Source | Description |
-|:--------|:-------|:------------|
-| **BDHS 2022** | [DHS Program](https://dhsprogram.com) | Bangladesh Demographic & Health Survey 2022 |
-
-> [!IMPORTANT]
-> DHS datasets are **NOT included** in this repository. Please obtain approval and download datasets directly from [dhsprogram.com](https://dhsprogram.com).
-
----
-
-## Quick Start
-
-**Requirements:** Stata `>= 15`
-
-```stata
-cd "/path/to/DHS-Data-Analysis-with-STATA"
-* Follow along with slides/STATA_Day_01.pdf and the companion .do file for each day
-```
-
-1. Register at [dhsprogram.com](https://dhsprogram.com) and download the relevant DHS recode file
-2. Open the corresponding day's slide deck in `slides/`
-3. Run the companion script in `stata-code/` alongside the video
-
----
-
-## YouTube Playlist
-
-<div align="center">
-
-[![YouTube](https://img.shields.io/badge/Watch%20on-Salek%20Data%20Lab-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@SalekResearch)
-
-</div>
-
-New episodes are released as part of the **Salek Data Lab** series on the **Salek Research Hub** YouTube channel — practical DHS analysis, explained step-by-step for the Bangladeshi and global public health research community.
-
----
-
-## Author
-
-**Md Salek Miah**
-Department of Statistics, Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh
-Statistical Analysis Instructor, BIIHR · GBD Collaborator, IHME (Seattle)
-
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0005--5973--461X-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-5973-461X)
-[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Profile-4285F4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=oV99NYoAAAAJ)
-[![GitHub](https://img.shields.io/badge/GitHub-muhammadsalek-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/muhammadsalek)
-
----
-
-## Cite This Course
-
-```bibtex
-@misc{miah_dhs_stata_course_2026,
-  title  = {DHS Data Analysis with STATA: A Practical Course},
-  author = {Miah, Md Salek},
-  year   = {2026},
-  url    = {https://github.com/muhammadsalek/DHS-Data-Analysis-with-STATA}
+% ==================== HYPERREF SETTINGS ====================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=accent,
+    citecolor=green,
+    pdftitle={DHS Data Analysis with STATA},
+    pdfauthor={Md Salek Miah},
 }
-```
 
----
+% ==================== CUSTOM COMMANDS ====================
+\newcommand{\badge}[2]{%
+    \begin{tcolorbox}[
+        colback=#2!15,
+        colframe=#2,
+        arc=3pt,
+        boxrule=0.5pt,
+        boxsep=2pt,
+        left=4pt,
+        right=4pt,
+        top=2pt,
+        bottom=2pt,
+        fontupper=\small\bfseries
+    ]#1\end{tcolorbox}%
+}
 
-## License
+\newcommand{\checkmark}{\textcolor{green}{\faCheckCircle}}
 
-MIT License — Copyright (c) 2026 Md Salek Miah
-Open for academic and educational use. Attribution appreciated.
+% ============================================================
+% DOCUMENT START
+% ============================================================
+\begin{document}
 
----
+% ============================================================
+% TITLE SECTION
+% ============================================================
+\begin{center}
+{\Huge \textbf{Demographic and Health Surveys (DHS)}}
+\vspace{0.2cm}
 
-<div align="center">
+{\Large \textbf{Data Analysis with STATA}}
+\vspace{0.2cm}
 
-**Department of Statistics · Shahjalal University of Science and Technology · Sylhet, Bangladesh**
+{\large A Complete Hands-On Course for Analyzing DHS Data}
+\vspace{0.5cm}
 
-[![Made with Stata](https://img.shields.io/badge/Made%20with-Stata-1A5276?style=flat-square&logoColor=white)](https://www.stata.com)
-[![BDHS 2022](https://img.shields.io/badge/Data-BDHS%202022-00d4ff?style=flat-square)](https://dhsprogram.com)
-[![SUST](https://img.shields.io/badge/University-SUST%20Bangladesh-f59e0b?style=flat-square)](https://www.sust.edu)
+\begin{minipage}{0.8\textwidth}
+\centering
+\rule{\textwidth}{1pt}
+\vspace{0.3cm}
+\end{minipage}
 
-*⭐ Star this repo to follow along with the course!*
+\vspace{0.3cm}
+\textbf{Md Salek Miah} \\
+Department of Statistics \\
+Shahjalal University of Science and Technology (SUST) \\
+Sylhet-3114, Bangladesh
+\vspace{0.2cm}
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:1A5276,100:00d4ff&height=120&section=footer)
+\href{https://orcid.org/0009-0005-5973-461X}{%
+    \faOrcid\enspace ORCID: 0009-0005-5973-461X
+} \quad
+\href{https://scholar.google.com/citations?user=oV99NYoAAAAJ}{%
+    \faGoogleScholar\enspace Google Scholar
+} \quad
+\href{https://github.com/muhammadsalek}{%
+    \faGithub\enspace GitHub
+}
 
-</div>
+\vspace{0.3cm}
+\begin{minipage}{0.7\textwidth}
+\centering
+\href{https://youtube.com/@salekdatalab}{%
+    \faYoutube\enspace \textcolor{red}{Salek Data Lab}
+}
+\end{minipage}
+
+\vspace{0.3cm}
+\begin{minipage}{0.8\textwidth}
+\centering
+\rule{\textwidth}{1pt}
+\end{minipage}
+
+\end{center}
+
+\vspace{0.3cm}
+
+% ============================================================
+% BADGES SECTION
+% ============================================================
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+\centering
+\begin{tcolorbox}[
+    colback=darkbg!5,
+    colframe=darkbg!30,
+    arc=5pt,
+    boxrule=1pt,
+    boxsep=4pt,
+    left=8pt,
+    right=8pt,
+    top=4pt,
+    bottom=4pt
+]
+\scriptsize
+\badge{License: MIT}{green}%
+\badge{Status: Active Research}{purple}%
+\badge{Output: Q1 Journal Ready}{cyan}%
+\badge{Stata}{stata}%
+\badge{R 4.2+}{blue}%
+\badge{BDHS 2022}{cyan}%
+\badge{ggplot2}{red}%
+\badge{tidyverse}{blue}%
+\badge{viridis}{green}%
+\badge{patchwork}{purple}%
+\end{tcolorbox}
+\end{minipage}
+\end{center}
+
+\vspace{0.3cm}
+
+% ============================================================
+% RESEARCH PROJECT SECTION
+% ============================================================
+\section*{Research Project: Unmet Need for Family Planning — Bangladesh}
+
+\subsection*{Title}
+\textbf{Association Between Internet Use and Unmet Need for Family Planning among Ever-Married Women in Bangladesh: Evidence from BDHS 2022}
+
+\subsection*{Overview}
+This study examines the association between internet use and unmet need for family planning among ever-married women in Bangladesh, using data from the \textbf{Bangladesh Demographic and Health Survey (BDHS) 2022}. The analysis integrates spatial mapping at the division level with statistical modeling to identify regional disparities and the role of digital access in reproductive health outcomes.
+
+\subsection*{Analysis Pipeline}
+\begin{center}
+\begin{tikzpicture}[node distance=0.5cm, >=stealth, scale=0.8, transform shape]
+\node[draw, fill=stata!20, rounded corners, minimum width=6cm, minimum height=0.5cm, align=center] (data) {BDHS 2022 Survey Data};
+\node[draw, fill=stata!30, rounded corners, minimum width=6cm, minimum height=0.5cm, align=center, below=0.3cm of data] (prep) {Preprocessing: cleaning, recoding, survey weighting};
+\node[draw, fill=stata!40, rounded corners, minimum width=6cm, minimum height=0.5cm, align=center, below=0.3cm of prep] (stat) {Statistical Analysis: logistic regression, odds ratios};
+\node[draw, fill=stata!50, rounded corners, minimum width=6cm, minimum height=0.5cm, align=center, below=0.3cm of stat] (spatial) {Spatial Analysis: division-level choropleth maps};
+\node[draw, fill=green!30, rounded corners, minimum width=6cm, minimum height=0.5cm, align=center, below=0.3cm of spatial] (output) {Outputs: Q1 figures, CSV tables, maps};
+\draw[->, thick] (data) -- (prep);
+\draw[->, thick] (prep) -- (stat);
+\draw[->, thick] (stat) -- (spatial);
+\draw[->, thick] (spatial) -- (output);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Key Highlights}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{4cm}p{8cm}}
+\toprule
+\textbf{Feature} & \textbf{Details} \\
+\midrule
+Exposure Variable & Internet use (frequency and access) \\
+Outcome Variable & Unmet need for family planning \\
+Population & Ever-married women of reproductive age \\
+Survey Design & BDHS 2022 complex survey with proper weighting \\
+Spatial Scope & 8 divisions of Bangladesh \\
+Statistical Method & Weighted logistic regression, odds ratios, 95\% CI \\
+Spatial Method & Division-level choropleth mapping \\
+Output Format & 300 DPI publication-ready figures \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% COURSE SECTION
+% ============================================================
+\section*{DHS Data Analysis with STATA Course}
+
+\subsection*{What You'll Learn}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}[leftmargin=0.7cm, itemsep=2pt]
+\item[\checkmark] Import DHS datasets
+\item[\checkmark] Understand DHS file structure
+\item[\checkmark] Variable recoding
+\item[\checkmark] Missing data handling
+\item[\checkmark] Survey weights
+\item[\checkmark] svyset command
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}[leftmargin=0.7cm, itemsep=2pt]
+\item[\checkmark] Weighted descriptive statistics
+\item[\checkmark] Cross-tabulation
+\item[\checkmark] Logistic regression
+\item[\checkmark] Model diagnostics
+\item[\checkmark] Publication-ready tables
+\item[\checkmark] Manuscript reporting
+\end{itemize}
+\end{minipage}
+
+\subsection*{Repository Structure}
+\begin{center}
+\begin{tikzpicture}[scale=0.75, transform shape]
+\node[draw, fill=lightbg, rounded corners, minimum width=6cm, minimum height=0.5cm, align=center, font=\ttfamily] (root) {DHS-Data-Analysis-with-STATA/};
+\node[draw, fill=white, rounded corners, minimum width=5cm, minimum height=0.4cm, align=center, font=\ttfamily, below=0.15cm of root] (slides) {slides/};
+\node[draw, fill=white, rounded corners, minimum width=5cm, minimum height=0.4cm, align=center, font=\ttfamily, below=0.1cm of slides] (stata) {stata-code/};
+\node[draw, fill=white, rounded corners, minimum width=5cm, minimum height=0.4cm, align=center, font=\ttfamily, below=0.1cm of stata] (docs) {docs/};
+\node[draw, fill=white, rounded corners, minimum width=5cm, minimum height=0.4cm, align=center, font=\ttfamily, below=0.1cm of docs] (output) {sample-output/};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{YouTube Playlist}
+\href{https://youtube.com/@salekdatalab}{%
+    \faYoutube\enspace \textcolor{red}{\textbf{Salek Data Lab}}
+} — Subscribe for weekly DHS tutorials and research methodology videos.
+
+% ============================================================
+% AUTHORS SECTION
+% ============================================================
+\section*{Authors \& Affiliation}
+
+\subsection*{Corresponding Author}
+\textbf{Md Jamal Uddin, Ph.D.} \\
+Professor, Department of Statistics \\
+Shahjalal University of Science and Technology (SUST), Sylhet-3114, Bangladesh \\
+Faculty of Graduate Education, Daffodil International University, Dhaka, Bangladesh \\
+\faPhone\enspace +8801716972846 \\
+\faEnvelope\enspace \href{mailto:jamal-sta@sust.edu}{jamal-sta@sust.edu} \\
+\faOrcid\enspace \href{https://orcid.org/0000-0002-8360-3274}{ORCID: 0000-0002-8360-3274}
+
+\vspace{0.3cm}
+
+\subsection*{Co-Author}
+\textbf{Md Salek Miah} \\
+Research Assistant, Department of Statistics \\
+Shahjalal University of Science and Technology (SUST), Sylhet-3114, Bangladesh \\
+\faEnvelope\enspace \href{mailto:saleksta@gmail.com}{saleksta@gmail.com} \\
+\faOrcid\enspace \href{https://orcid.org/0009-0005-5973-461X}{ORCID: 0009-0005-5973-461X} \\
+\faGithub\enspace \href{https://github.com/muhammadsalek}{GitHub: muhammadsalek} \\
+\faLinkedin\enspace \href{https://www.linkedin.com/in/md-salek-miah/}{LinkedIn: Md Salek Miah}
+
+\vspace{0.3cm}
+
+\subsection*{Affiliation}
+\textbf{Biostatistics, Epidemiology, and Public Health Research Team} \\
+Department of Statistics \\
+Shahjalal University of Science and Technology (SUST) \\
+Sylhet-3114, Bangladesh
+
+% ============================================================
+% DATA SOURCE SECTION
+% ============================================================
+\section*{Data Source}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{3.5cm}p{4cm}p{5cm}}
+\toprule
+\textbf{Dataset} & \textbf{Source} & \textbf{Description} \\
+\midrule
+BDHS 2022 & DHS Program & Bangladesh Demographic \& Health Survey 2022 \\
+Division Shapefile & Bangladesh Admin Boundaries & 8 Divisions — spatial polygons \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{tcolorbox}[
+    colback=codebg,
+    colframe=stata,
+    arc=3pt,
+    boxrule=0.5pt,
+    fontupper=\small
+]
+\textbf{Important:} DHS datasets are NOT included in this repository. Please obtain approval and download datasets directly from: \\
+\url{https://dhsprogram.com}
+\end{tcolorbox}
+
+% ============================================================
+% QUICK START SECTION
+% ============================================================
+\section*{Quick Start}
+
+\subsection*{Requirements}
+\textbf{Stata} $\ge$ 15 \\
+\textbf{R} $\ge$ 4.2
+
+\subsection*{Step 1 — Statistical Analysis (Stata)}
+\begin{lstlisting}[
+    language=,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{border}
+]
+cd "/path/to/BDHS-Unmet-Need-Analysis"
+do Analysis.do
+do Spatials.do
+\end{lstlisting}
+
+\subsection*{Step 2 — Spatial Figures (R)}
+\begin{lstlisting}[
+    language=,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{border}
+]
+packages <- c("sf", "readxl", "dplyr", "stringr", "janitor",
+              "ggplot2", "ggspatial", "ggtext", "tmap",
+              "spdep", "spatialreg", "rmapshaper", "viridis",
+              "classInt", "patchwork", "tidyverse")
+
+installed <- packages %in% rownames(installed.packages())
+if (any(!installed)) {
+  install.packages(packages[!installed], dependencies = TRUE)
+}
+invisible(lapply(packages, library, character.only = TRUE))
+
+source("Spatial_Figures.R")
+\end{lstlisting}
+
+% ============================================================
+% RESEARCH IMPACT SECTION
+% ============================================================
+\section*{Research Impact}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{3.5cm}p{8.5cm}}
+\toprule
+\textbf{Domain} & \textbf{Contribution} \\
+\midrule
+Reproductive Health & Examines digital determinants of family planning uptake \\
+Spatial Epidemiology & Maps geographic disparities in unmet need across divisions \\
+Public Health & Evidence for SDG 3 — Universal Health Coverage monitoring \\
+Health Policy & Actionable insights for targeted interventions in Bangladesh \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% CITATION SECTION
+% ============================================================
+\section*{Citation}
+
+\begin{lstlisting}[
+    language=,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{border}
+]
+@article{miah_uddin_unmet_need_2025,
+  title   = {Association Between Internet Use and Unmet Need for Family Planning
+             among Ever-Married Women in Bangladesh: Evidence from BDHS 2022},
+  author  = {Miah, Md Salek and Uddin, Md Jamal},
+  journal = {[Journal Name]},
+  year    = {2025},
+  note    = {Q1 Journal Submission},
+  url     = {https://github.com/muhammadsalek/BDHS-Unmet-Need-Analysis}
+}
+\end{lstlisting}
+
+% ============================================================
+% LICENSE SECTION
+% ============================================================
+\section*{License}
+
+MIT License — Copyright (c) 2025 Md Salek Miah \& Md Jamal Uddin
+
+Open for academic research. Citation required for publication use.
+
+\vspace{0.3cm}
+
+\begin{minipage}{0.9\textwidth}
+\centering
+\begin{tcolorbox}[
+    colback=lightbg,
+    colframe=border,
+    arc=3pt,
+    boxrule=0.5pt,
+    fontupper=\small
+]
+\begin{verbatim}
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+\end{verbatim}
+\end{tcolorbox}
+\end{minipage}
+
+% ============================================================
+% FOOTER
+% ============================================================
+\vspace{0.5cm}
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+\centering
+\rule{\textwidth}{1pt}
+\vspace{0.3cm}
+
+\textbf{Biostatistics, Epidemiology, and Public Health Research Team} \\
+Department of Statistics · Shahjalal University of Science and Technology · Sylhet-3114, Bangladesh
+
+\vspace{0.3cm}
+\small
+\href{https://www.stata.com}{\textcolor{stata}{Made with Stata}} \quad
+\textcolor{border}{|} \quad
+\href{https://r-project.org}{\textcolor{blue}{Made with R}} \quad
+\textcolor{border}{|} \quad
+\href{https://dhsprogram.com}{\textcolor{cyan}{BDHS 2022}} \quad
+\textcolor{border}{|} \quad
+\href{https://www.sust.edu}{\textcolor{orange}{SUST Bangladesh}}
+
+\vspace{0.3cm}
+\scriptsize
+\faStar\enspace Star this repo if it helped your research!
+
+\vspace{0.3cm}
+\rule{\textwidth}{1pt}
+\end{minipage}
+\end{center}
+
+% ============================================================
+% END
+% ============================================================
+\end{document}
