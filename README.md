@@ -1,9 +1,59 @@
-# DHS-Data-Analysis-with-STATA
-## A complete hands-on course on Demographic and Health Survey (DHS) data analysis using STATA.
+# DHS Data Analysis with STATA
 
-### This repository accompanies the "DHS Data Analysis with STATA" YouTube playlist on Salek Data Lab. It provides lecture slides, STATA (.do) files, sample outputs, and documentation for analyzing DHS survey data using survey-weighted statistical methods.
+A practical, step-by-step course for analyzing Demographic and Health Survey (DHS) datasets using STATA.
 
- #### Topics include data preparation, variable recoding, survey design, descriptive statistics, logistic regression, model diagnostics, and publication-ready tables for public health and epidemiological research.
+This repository is maintained by Muhammad Salek Miah.
 
-##### Note:
- ###### This repository does NOT redistribute DHS datasets. Users should request and download datasets directly from the DHS Program after obtaining approval.
+## What you'll learn
+
+- Import DHS datasets
+- Understand DHS file structure
+- Variable recoding
+- Missing data handling
+- Survey weights
+- svyset
+- Weighted descriptive statistics
+- Cross-tabulation
+- Logistic regression
+- Survey logistic regression
+- Model diagnostics
+- Publication-ready tables
+- Manuscript reporting
+
+## YouTube Playlist
+
+Salek Data Lab
+
+## Repository Structure
+
+slides/
+stata-code/
+docs/
+sample-output/
+
+## Important
+
+DHS datasets are NOT included.
+
+Please obtain approval and download datasets directly from:
+
+https://dhsprogram.com/
+
+## Author
+
+Md Salek Miah
+
+Department of Statistics
+
+Shahjalal University of Science and Technology
+
+Bangladesh
+
+ORCID:
+https://orcid.org/0009-0005-5973-461X
+
+Google Scholar:
+https://scholar.google.com/citations?user=oV99NYoAAAAJ
+
+GitHub:
+https://github.com/muhammadsalek
