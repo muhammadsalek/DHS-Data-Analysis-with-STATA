@@ -63,6 +63,7 @@ Raw DHS Dataset (.dta)
 
 - [x] Import DHS datasets into Stata
 - [x] Understand DHS file structure and variable naming conventions
+- [x] Data management and preprocessing
 - [x] Variable recoding (`generate`, `egen`, `recode`)
 - [x] Missing data handling
 - [x] Survey weights and normalization
@@ -79,17 +80,17 @@ Raw DHS Dataset (.dta)
 
 ## Course Roadmap
 
-| Day | Topic | Status |
-|:---:|:------|:------:|
-| **01** | Import, Clean \& Explore DHS Data | ✅ Available |
-| 02 | Variable Recoding \& Labeling | 🔜 Coming Soon |
-| 03 | Missing Data \& Survey Design (`svyset`) | 🔜 Coming Soon |
-| 04 | Weighted Descriptives \& Cross-tabulation | 🔜 Coming Soon |
-| 05 | Logistic Regression \& Model Building | 🔜 Coming Soon |
-| 06 | Survey Logistic Regression \& Diagnostics | 🔜 Coming Soon |
-| 07 | Publication-Ready Tables \& Manuscript Reporting | 🔜 Coming Soon |
+| Day | Topic | Slides | Do-file | Status |
+|:---:|:------|:------:|:-------:|:------:|
+| **01** | Import, Clean, Explore \& Data Management | [STATA_Day_01.pdf](STATA_Day_01.pdf) | [Salek_day_01(Data management).do](Salek_day_01(Data%20management).do) | ✅ Available |
+| 02 | Variable Recoding \& Labeling | — | — | 🔜 Coming Soon |
+| 03 | Missing Data \& Survey Design (`svyset`) | — | — | 🔜 Coming Soon |
+| 04 | Weighted Descriptives \& Cross-tabulation | — | — | 🔜 Coming Soon |
+| 05 | Logistic Regression \& Model Building | — | — | 🔜 Coming Soon |
+| 06 | Survey Logistic Regression \& Diagnostics | — | — | 🔜 Coming Soon |
+| 07 | Publication-Ready Tables \& Manuscript Reporting | — | — | 🔜 Coming Soon |
 
-> Slide decks and companion `.do` files are released alongside each YouTube episode.
+> Slide decks and companion `.do` files are released alongside each YouTube episode and added directly to the repository root as they go live.
 
 ---
 
@@ -100,13 +101,16 @@ DHS-Data-Analysis-with-STATA/
 │
 ├── README.md
 ├── LICENSE
-├── STATA_Day_01.pdf            ← Day 01 lecture slides (Import, Clean & Explore)
+├── STATA_Day_01.pdf                          ← Day 01 lecture slides (Import, Clean & Explore)
+├── Salek_day_01(Data management).do          ← Day 01 companion script (Data preprocessing)
 │
-├── slides/                     ← Beamer/PDF lecture slides, by day
-├── stata-code/                 ← Companion .do files, by day
-├── docs/                       ← Supplementary notes and references
-└── sample-output/              ← Example tables and figures
+├── slides/                                   ← Future Beamer/PDF lecture slides, by day
+├── stata-code/                                ← Future companion .do files, by day
+├── docs/                                      ← Supplementary notes and references
+└── sample-output/                             ← Example tables and figures
 ```
+
+> As the course progresses, new day-wise slides and `.do` files will be organized into the `slides/` and `stata-code/` folders. Until then, files are added directly to the repository root.
 
 ---
 
@@ -127,12 +131,17 @@ DHS-Data-Analysis-with-STATA/
 
 ```stata
 cd "/path/to/DHS-Data-Analysis-with-STATA"
-* Follow along with slides/STATA_Day_01.pdf and the companion .do file for each day
+
+* Day 01 — Data management & preprocessing
+do "Salek_day_01(Data management).do"
+
+* Follow along with STATA_Day_01.pdf while running the script
 ```
 
 1. Register at [dhsprogram.com](https://dhsprogram.com) and download the relevant DHS recode file
-2. Open the corresponding day's slide deck in `slides/`
-3. Run the companion script in `stata-code/` alongside the video
+2. Open `STATA_Day_01.pdf` for the Day 01 lecture slides
+3. Run `Salek_day_01(Data management).do` in Stata alongside the video
+4. Repeat for each new day's slides and `.do` file as they are released
 
 ---
 
