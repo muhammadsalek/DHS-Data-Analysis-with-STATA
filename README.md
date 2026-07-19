@@ -2,7 +2,7 @@
 
 A practical, step-by-step course for analyzing Demographic and Health Survey (DHS) datasets using STATA.
 
-This repository is maintained by Muhammad Salek Miah.
+This repository is maintained by Md Salek Miah.
 
 ## What you'll learn
 
